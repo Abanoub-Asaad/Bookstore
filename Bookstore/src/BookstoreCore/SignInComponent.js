@@ -45,16 +45,16 @@ export default class SignInComponent extends React.Component {
           <ImageBackground style={styles.background}
             source={require("../Screens/Images/SignIn_background2.jpeg")}>
           </ImageBackground>
-
         </View>
+
         <Animatable.View style={styles.footer}
           animation="fadeInUpBig" >
           <Text style={styles.textWelcome}> Welcome back </Text>
           <Text style={styles.text_bottom_welcome}> Login to your account </Text>
 
           <View style={[styles.action, { marginTop: 40 }]}>
-            <FontAwesome
-              name="user-o"
+            <Feather
+              name="mail"
               color="#FF8C00"
               size={20}
             />

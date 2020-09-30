@@ -12,7 +12,7 @@
 |npm install react-native-animatable --save|
 |npm install --save react-native-vector-icons|
 
-| Amazing Websites |
+| Amazing React Native Resources|
 | ------------------------------------------------------------ |
 |[React Native Animation](https://github.com/oblador/react-native-animatable)|
 |[React Native Icons](https://oblador.github.io/react-native-vector-icons/)|
