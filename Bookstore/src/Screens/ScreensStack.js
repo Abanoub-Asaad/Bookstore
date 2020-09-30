@@ -2,19 +2,22 @@ import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./src/Screens/Home";
-import Categories from "./src/Screens/Categories";
-import Search from "./src/Screens/Search";
-import Bookmarks from "./src/Screens/Bookmarks";
-import profile from "./src/Screens/profile";
+import Home from "./Home";
+import Categories from "./Categories";
+import Search from "./Search";
+import Bookmarks from "./Bookmarks";
+import profile from "./profile";
 import { AntDesign } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
-export default function App() {
+
+export default class ScreensStack extends React.Component {
+
+  render() {
   let iconcolor = "#FF8C00";
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="home"
+        initialRouteName="Home"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ size }) => {
             let iconame;
@@ -30,7 +33,7 @@ export default function App() {
                       ? (iconame = "profile")
                       : null;
             return <AntDesign name={iconame} size={size} color={iconcolor} />;
-          }
+          },
         })}
         tabBarOptions={{
           activeTintColor: iconcolor,
@@ -43,5 +46,5 @@ export default function App() {
         <Tab.Screen name="Profile" component={profile} />
       </Tab.Navigator>
     </NavigationContainer>
-  );
+  );}
 }

@@ -63,6 +63,20 @@ export default class SignUpComponent extends React.Component {
     }
   }
 
+  checkPasswordValidation(value) {
+    var n = value.length;
+    if (n > 5) {
+      this.setState({
+        isValidPassword: true
+      });
+    }
+    else {
+      this.setState({
+        isValidPassword: false
+      });
+    }
+  }
+
   makeSecurePassword() {
     this.setState({
       secureTextEntry: !this.state.secureTextEntry
@@ -164,7 +178,7 @@ export default class SignUpComponent extends React.Component {
             />
             {this.state.secureTextEntry ?
               <TextInput
-                placeholder="Password"
+                placeholder="Password (must be > 5 characters)"
                 secureTextEntry={true}
                 style={styles.textInput}
                 value={this.state.password}
@@ -174,7 +188,7 @@ export default class SignUpComponent extends React.Component {
               />
               :
               <TextInput
-                placeholder="Password"
+                placeholder="Password (must be > 5 characters)"
                 style={styles.textInput}
                 value={this.state.password}
                 onChangeText={(text) => this.setState({
@@ -204,7 +218,14 @@ export default class SignUpComponent extends React.Component {
 
           <View style={styles.button}>
             <TouchableOpacity style={styles.button_signUp}
-              onPress={() => this.props.navigation.navigate("SignUpScreen")}>
+              onPress={() => {
+                this.checkPasswordValidation(this.state.password)
+                
+                this.state.isValidUserName && this.state.isValidPhoneNumber &&
+                this.state.isValidEmail && this.state.password.length > 5 ?
+                this.props.navigation.navigate("HomeStackScreen") : null
+              }
+              }>
               <Text style={styles.btnTextSignUp}>Sign Up</Text>
             </TouchableOpacity>
           </View>

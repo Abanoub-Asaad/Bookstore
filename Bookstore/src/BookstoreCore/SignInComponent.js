@@ -11,10 +11,10 @@ export default class SignInComponent extends React.Component {
     super(props)
     this.state = {
       isValidEmail: false,
+      isValidPassword: false,
       password: '',
       secureTextEntry: true
     }
-
   }
 
   checkEmailValidation(value) {
@@ -28,6 +28,20 @@ export default class SignInComponent extends React.Component {
     else {
       this.setState({
         isValidEmail: false
+      });
+    }
+  }
+
+  checkPasswordValidation(value) {
+    var n = value.length;
+    if (n > 5) {
+      this.setState({
+        isValidPassword: true
+      });
+    }
+    else {
+      this.setState({
+        isValidPassword: false
       });
     }
   }
@@ -85,7 +99,7 @@ export default class SignInComponent extends React.Component {
             />
             {this.state.secureTextEntry ?
               <TextInput
-                placeholder="Password"
+                placeholder="Password (must be > 5 characters)"
                 secureTextEntry={true}
                 style={styles.textInput}
                 value={this.state.password}
@@ -95,14 +109,13 @@ export default class SignInComponent extends React.Component {
               />
               :
               <TextInput
-                placeholder="Password"
+                placeholder="Password (must be > 5 characters)"
                 style={styles.textInput}
                 value={this.state.password}
                 onChangeText={(text) => this.setState({
                   password: text
                 })}
               />}
-
             <TouchableOpacity
               onPress={() => this.makeSecurePassword()}>
               {this.state.secureTextEntry ?
@@ -119,13 +132,19 @@ export default class SignInComponent extends React.Component {
                 />
               }
             </TouchableOpacity>
-
           </View>
 
           <View style={styles.button}>
             <TouchableOpacity style={styles.button_signIn}
-              onPress={() => this.props.navigation.navigate("SignInScreen")}>
-              <Text style={styles.textSignIn}>Login</Text>
+              onPress={() => {
+                this.checkPasswordValidation(this.state.password)
+                console.log(this.state.password)
+
+                this.state.isValidEmail && this.state.password.length > 5 ?
+                  this.props.navigation.navigate("HomeScreen") : null
+              }
+              }>
+              <Text style={styles.btnTextSignIn}>Login</Text>
             </TouchableOpacity>
           </View>
 
@@ -208,7 +227,7 @@ const styles = StyleSheet.create({
     width: image_width - 50,
     height: 50
   },
-  textSignIn: {
+  btnTextSignIn: {
     fontSize: 18,
     color: 'white',
     fontWeight: 'bold',
