@@ -22,12 +22,12 @@ const StackNavigator = createStackNavigator({
         headerShown: false
       }
     },
-    // SignUpScreen: {
-    //   screen: SignUpComponent ,
-    //   navigationOptions:{
-    //     headerShown: false
-    //   }
-    // }
+    SignUpScreen: {
+      screen: SignUpComponent ,
+      navigationOptions:{
+        headerShown: false
+      }
+    }
 });
 
 export default createAppContainer (StackNavigator);

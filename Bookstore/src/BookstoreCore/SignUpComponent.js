@@ -6,7 +6,7 @@ export default class SignUpComponent extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hi from SignInComponent!</Text>
+        <Text>Hi from SignUpComponent!</Text>
       </View>
     );
   }

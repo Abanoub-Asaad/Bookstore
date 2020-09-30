@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, StatusBar, TouchableOpacity, Dimensions } from 'react-native';
+
 import * as Animatable from 'react-native-animatable'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 export default class SplashComponent extends React.Component {
   render() {
@@ -22,12 +24,16 @@ export default class SplashComponent extends React.Component {
           animation="fadeInUpBig" >
           <Text style={styles.title}>JOIN BOOKSTORE TODAY!</Text>
           <Text style={styles.text}>Create an account to start reading</Text>
-          <TouchableOpacity style={styles.button_login}>
-            <Text style={styles.textSign}>Log In</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button_signup}>
-            <Text style={styles.textSign}>Sign Up</Text>
-          </TouchableOpacity>
+          <View style={styles.button}>
+            <TouchableOpacity style={styles.button_getStarted}
+              onPress={() => this.props.navigation.navigate("SignInScreen")}>
+              <Text style={styles.textSign}>Get started</Text>
+              <MaterialIcons
+                name="navigate-next"
+                color="white"
+                size={20} />
+            </TouchableOpacity>
+          </View>
         </Animatable.View>
       </View>
     );
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    paddingVertical: 20,
+    paddingVertical: 50,
     paddingHorizontal: 30
   },
   mainScreen_logoStyle: {
@@ -71,28 +77,21 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 5
   },
-  button_login: {
+  button: {
+    alignItems: 'flex-end',
+    marginTop: 30,
+  },
+  button_getStarted: {
     backgroundColor: '#FF8C00',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
-    marginTop: 20,
-    width: 300,
-    height: 40
-  },
-  button_signup: {
-    borderColor: '#FF8C00',
-    borderWidth: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 50,
-    marginTop: 5,
-    width: 300,
-    height: 40
+    width: 150,
+    height: 40,
+    flexDirection: 'row'
   },
   textSign: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
-    fontSize: 20
   }
 });
