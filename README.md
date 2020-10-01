@@ -11,8 +11,10 @@
 |npm install --save react-navigation|
 |npm install react-native-animatable --save|
 |npm install --save react-native-vector-icons|
-npm i expo-linear-gradient
-npm i react-native-paper
+|npm i expo-linear-gradient|
+|npm i react-native-paper|
+|npm install --save react-navigation-stack|
+|npm install --save react-native-animatable|
 
 
 | Amazing React Native Resources|

@@ -25,12 +25,12 @@ const Categories = (props) => {
 
                 <View style={{ flexDirection: 'row' }}>
                     <Image
-                        source={require('../assets/funny.jpg')}
+                        source={require('../Screens/Images/funny.jpg')}
                         style={styles.Imagee}
                         resizeMode="contain"
                     />
                     <Image
-                        source={require('../assets/drama.jpg')}
+                        source={require('../Screens/Images/drama.jpg')}
                         resizeMode="contain"
                         style={styles.Imagee}
                     />
@@ -43,12 +43,12 @@ const Categories = (props) => {
 
                 <View style={{ flexDirection: 'row' }}>
                     <Image
-                        source={require('../assets/romantic.jpg')}
+                        source={require('../Screens/Images/romantic.jpg')}
                         style={styles.Imagee}
                         resizeMode="contain"
                     />
                     <Image
-                        source={require('../assets/horror.jpg')}
+                        source={require('../Screens/Images/horror.jpg')}
                         resizeMode="contain"
                         style={styles.Imagee}
                     />
@@ -61,7 +61,7 @@ const Categories = (props) => {
 
                 <View style={{ flexDirection: 'row' }}>
                     <Image
-                        source={require('../assets/action.jpg')}
+                        source={require('../Screens/Images/action.jpg')}
                         style={styles.Imagee}
                         resizeMode="contain"
                     />

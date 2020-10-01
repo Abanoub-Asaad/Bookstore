@@ -23,6 +23,12 @@ const StackNavigator = createStackNavigator({
         headerShown: false
       }
     },
+    HomeStackScreen: {
+      screen: ScreensStack ,
+      navigationOptions:{
+        headerShown: false
+      }
+    },
     SignUpScreen: {
       screen: SignUpComponent ,
       navigationOptions:{

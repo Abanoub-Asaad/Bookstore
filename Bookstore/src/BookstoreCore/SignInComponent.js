@@ -141,7 +141,7 @@ export default class SignInComponent extends React.Component {
                 console.log(this.state.password)
 
                 this.state.isValidEmail && this.state.password.length > 5 ?
-                  this.props.navigation.navigate("HomeScreen") : null
+                  this.props.navigation.navigate("HomeStackScreen") : null
               }
               }>
               <Text style={styles.btnTextSignIn}>Login</Text>

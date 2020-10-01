@@ -13,38 +13,39 @@ const Tab = createBottomTabNavigator();
 export default class ScreensStack extends React.Component {
 
   render() {
-  let iconcolor = "#FF8C00";
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ size }) => {
-            let iconame;
-            route.name == "home"
-              ? (iconame = "home")
-              : route.name == "Categories"
-                ? (iconame = "bars")
-                : route.name == "Search"
-                  ? (iconame = "search1")
-                  : route.name == "Bookmarks"
-                    ? (iconame = "book")
-                    : route.name == "Profile"
-                      ? (iconame = "profile")
-                      : null;
-            return <AntDesign name={iconame} size={size} color={iconcolor} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: iconcolor,
-        }}
-      >
-        <Tab.Screen name="home" component={Home} />
-        <Tab.Screen name="Categories" component={Categories} />
-        <Tab.Screen name="Search" component={Search} />
-        <Tab.Screen name="Bookmarks" component={Bookmarks} />
-        <Tab.Screen name="Profile" component={profile} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );}
+    let iconcolor = "#FF8C00";
+    return (
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Home"
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ size }) => {
+              let iconame;
+              route.name == "home"
+                ? (iconame = "home")
+                : route.name == "Categories"
+                  ? (iconame = "bars")
+                  : route.name == "Search"
+                    ? (iconame = "search1")
+                    : route.name == "Bookmarks"
+                      ? (iconame = "book")
+                      : route.name == "Profile"
+                        ? (iconame = "profile")
+                        : null;
+              return <AntDesign name={iconame} size={size} color={iconcolor} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: iconcolor,
+          }}
+        >
+          <Tab.Screen name="home" component={Home} />
+          <Tab.Screen name="Categories" component={Categories} />
+          <Tab.Screen name="Search" component={Search} />
+          <Tab.Screen name="Bookmarks" component={Bookmarks} />
+          <Tab.Screen name="Profile" component={profile} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
