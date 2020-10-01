@@ -11,10 +11,11 @@
 |npm install --save react-navigation|
 |npm install react-native-animatable --save|
 |npm install --save react-native-vector-icons|
+npm i expo-linear-gradient
+npm i react-native-paper
+
 
 | Amazing React Native Resources|
 | ------------------------------------------------------------ |
 |[React Native Animation](https://github.com/oblador/react-native-animatable)|
 |[React Native Icons](https://oblador.github.io/react-native-vector-icons/)|
-npm i expo-linear-gradient
-npm i react-native-paper
