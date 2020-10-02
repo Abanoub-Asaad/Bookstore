@@ -1,12 +1,16 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 const HEIGHT = 300,
   WIDTH = 200;
 const BookOverview = (props) => {
+  const nav=useNavigation()
   return (
-    <TouchableOpacity style={styles.Main_View}>
-      <Image source={props.imgsrc} style={styles.Coverimg} />
+    <TouchableOpacity style={styles.Main_View} onPress={()=>{
+      nav.navigate('Book Details',{imgsrc:props.imgsrc,title:props.title})
+    }}>
+      <Image source={props.imgsrc} style={styles.Coverimg}  />
     </TouchableOpacity>
   );
 };
