@@ -4,6 +4,7 @@ import * as Animatable from 'react-native-animatable'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'
 import { TextInput } from 'react-native-gesture-handler';
+import * as firebase from 'firebase';
 
 export default class SignInComponent extends React.Component {
 
@@ -12,15 +13,18 @@ export default class SignInComponent extends React.Component {
     this.state = {
       isValidEmail: false,
       isValidPassword: false,
+      email: '',
       password: '',
       secureTextEntry: true
     }
   }
 
   checkEmailValidation(value) {
+
+    this.state.email = value;
+
     var n = value.length;
-    if (n > 4 && value.includes("@") && value.charAt(n - 1) == 'm' && value.charAt(n - 2) == 'o' && value.charAt(n - 3) == 'c'
-      && value.charAt(n - 4) == '.') {
+    if (n > 4 && value.includes("@")) {
       this.setState({
         isValidEmail: true
       });
@@ -52,8 +56,19 @@ export default class SignInComponent extends React.Component {
     })
   }
 
+  signInUser = () => {
+    const { email, password } = this.state
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => this.props.navigation.navigate("HomeStackScreen") )
+      .catch(error => alert(error.toString()) )
+  }
+
   render() {
+
     return (
+
       <View style={styles.container}>
         <View style={styles.header} >
           <ImageBackground style={styles.background}
@@ -116,6 +131,7 @@ export default class SignInComponent extends React.Component {
                   password: text
                 })}
               />}
+
             <TouchableOpacity
               onPress={() => this.makeSecurePassword()}>
               {this.state.secureTextEntry ?
@@ -132,6 +148,7 @@ export default class SignInComponent extends React.Component {
                 />
               }
             </TouchableOpacity>
+            
           </View>
 
           <View style={styles.button}>
@@ -141,7 +158,9 @@ export default class SignInComponent extends React.Component {
                 console.log(this.state.password)
 
                 this.state.isValidEmail && this.state.password.length > 5 ?
-                  this.props.navigation.navigate("HomeStackScreen") : null
+                  this.signInUser()
+                  :
+                  alert("Check your details again !")
               }
               }>
               <Text style={styles.btnTextSignIn}>Login</Text>

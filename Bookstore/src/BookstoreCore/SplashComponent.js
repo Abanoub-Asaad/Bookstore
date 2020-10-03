@@ -3,6 +3,19 @@ import { StyleSheet, Text, View, Button, StatusBar, TouchableOpacity, Dimensions
 
 import * as Animatable from 'react-native-animatable'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import * as firebase from 'firebase';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyBai3LXSBphOBLCjwsZr5voJpwaIPo3o-g",
+  authDomain: "bookstore-291307.firebaseapp.com",
+  databaseURL: "https://bookstore-291307.firebaseio.com",
+  projectId: "bookstore-291307",
+  storageBucket: "bookstore-291307.appspot.com"
+};
+// Initialize Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default class SplashComponent extends React.Component {
   render() {

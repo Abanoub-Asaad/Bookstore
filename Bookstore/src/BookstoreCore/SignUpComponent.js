@@ -6,6 +6,20 @@ import * as Animatable from 'react-native-animatable'
 import Feather from 'react-native-vector-icons/Feather'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import * as firebase from 'firebase';
+
+
+var firebaseConfig = {
+  apiKey: "AIzaSyBai3LXSBphOBLCjwsZr5voJpwaIPo3o-g",
+  authDomain: "bookstore-291307.firebaseapp.com",
+  databaseURL: "https://bookstore-291307.firebaseio.com",
+  projectId: "bookstore-291307",
+  storageBucket: "bookstore-291307.appspot.com"
+};
+// Initialize Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default class SignUpComponent extends React.Component {
 
@@ -15,6 +29,7 @@ export default class SignUpComponent extends React.Component {
       isValidUserName: false,
       isValidPhoneNumber: false,
       isValidEmail: false,
+      email: '',
       password: '',
       secureTextEntry: true
     }
@@ -49,9 +64,11 @@ export default class SignUpComponent extends React.Component {
   }
 
   checkEmailValidation(value) {
+
+    this.state.email = value;
+
     var n = value.length;
-    if (n > 4 && value.includes("@") && value.charAt(n - 1) == 'm' && value.charAt(n - 2) == 'o' && value.charAt(n - 3) == 'c'
-      && value.charAt(n - 4) == '.') {
+    if (n > 4 && value.includes("@") ) {
       this.setState({
         isValidEmail: true
       });
@@ -81,6 +98,19 @@ export default class SignUpComponent extends React.Component {
     this.setState({
       secureTextEntry: !this.state.secureTextEntry
     })
+  }
+
+  signUpUser(email, password){
+    try{
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      });
+     // firebase.auth().makeSecurePassword("abanoub.asaad200010@gmail.com", "123456");
+      this.props.navigation.navigate("HomeStackScreen") 
+    }
+    catch(error){
+      console.log(error.toString());
+      alert("There's an error with your email !");
+    }
   }
 
   render() {
@@ -220,10 +250,12 @@ export default class SignUpComponent extends React.Component {
             <TouchableOpacity style={styles.button_signUp}
               onPress={() => {
                 this.checkPasswordValidation(this.state.password)
-                
+            
                 this.state.isValidUserName && this.state.isValidPhoneNumber &&
                 this.state.isValidEmail && this.state.password.length > 5 ?
-                this.props.navigation.navigate("HomeStackScreen") : null
+                this.signUpUser(this.state.email, this.state.password)
+                :
+                alert("Check your details again !"); 
               }
               }>
               <Text style={styles.btnTextSignUp}>Sign Up</Text>

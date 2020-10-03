@@ -15,7 +15,8 @@
 |npm i react-native-paper|
 |npm install --save react-navigation-stack|
 |npm install --save react-native-animatable|
-
+|npm install -g firebase-tools	|
+|npm install --save firebase|
 
 | Amazing React Native Resources|
 | ------------------------------------------------------------ |
