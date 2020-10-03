@@ -17,6 +17,7 @@
 |npm install --save react-native-animatable|
 |npm install -g firebase-tools	|
 |npm install --save firebase|
+|npm i react-native-swiper|
 
 | Amazing React Native Resources|
 | ------------------------------------------------------------ |
