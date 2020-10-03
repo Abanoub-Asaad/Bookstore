@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+const screen_width = Dimensions.get('window').width;
+const screen_height = Dimensions.get('window').height;
 
 const Categories = (props) => {
     return (
         <View style={{ backgroundColor: 'white' }}>
             <LinearGradient
                 colors={['#FF8C00', '#FF8C00']}
-                style={{ height: "20%" }}
+                style={{ height: "10%" }}
             >
-                <View style={{ flexDirection: 'row', marginTop: 70, marginBottom: 20 }}>
+                <View style={{ flexDirection: 'row', marginTop: "4%", marginBottom: 20 }}>
                     <View style={styles.divider} />
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 38, color: "#2D3436" }}> Book <Text style={{ fontWeight: "300", color: "white" }}>Categories</Text></Text>
+                        <Text style={{ fontSize: 25, color: "#2D3436", fontWeight: 'bold' }}> Book <Text style={{ fontWeight: 'bold', color: "white" }}>Categories</Text></Text>
                     </View>
                     <View style={styles.divider} />
                 </View>
@@ -26,49 +28,49 @@ const Categories = (props) => {
                 <View style={{ flexDirection: 'row' }}>
                     <Image
                         source={require('../Screens/Images/funny.jpg')}
-                        style={styles.Imagee}
-                        resizeMode="contain"
+                        style={styles.Imagee_left}
+                        resizeMode="stretch"
                     />
                     <Image
                         source={require('../Screens/Images/drama.jpg')}
-                        resizeMode="contain"
-                        style={styles.Imagee}
+                        resizeMode="stretch"
+                        style={styles.Imagee_right}
                     />
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontSize: 30, fontStyle: 'italic', marginLeft: 50 }}>Funny</Text>
-                    <Text style={{ fontSize: 30, fontStyle: 'italic', marginLeft: 150 }}>Drama</Text>
+                    <Text style={{ fontSize: 30, marginLeft:screen_width/8 }}>Funny</Text>
+                    <Text style={{ fontSize: 30, marginLeft: screen_width/3 }}>Drama</Text>
                 </View>
 
 
                 <View style={{ flexDirection: 'row' }}>
                     <Image
                         source={require('../Screens/Images/romantic.jpg')}
-                        style={styles.Imagee}
-                        resizeMode="contain"
+                        style={styles.Imagee_left}
+                        resizeMode="stretch"
                     />
                     <Image
                         source={require('../Screens/Images/horror.jpg')}
-                        resizeMode="contain"
-                        style={styles.Imagee}
+                        resizeMode="stretch"
+                        style={styles.Imagee_right}
                     />
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontSize: 30, fontStyle: 'italic', marginLeft: 50 }}>Romantic</Text>
-                    <Text style={{ fontSize: 30, fontStyle: 'italic', marginLeft: 100 }}>Horror</Text>
+                    <Text style={{ fontSize: 30, marginLeft: screen_width/10 }}>Romantic</Text>
+                    <Text style={{ fontSize: 30, marginLeft: screen_width/4.5  }}>Horror</Text>
                 </View>
 
 
                 <View style={{ flexDirection: 'row' }}>
                     <Image
                         source={require('../Screens/Images/action.jpg')}
-                        style={styles.Imagee}
-                        resizeMode="contain"
+                        style={styles.Imagee_left}
+                        resizeMode="stretch"
                     />
 
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontSize: 30, fontStyle: 'italic', marginLeft: 50 }}>Action</Text>
+                    <Text style={{ fontSize: 30, marginLeft: screen_width/8 }}>Action</Text>
                 </View>
 
             </ScrollView>
@@ -100,10 +102,17 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 8,
     },
-    Imagee: {
-        height: 250,
-        width: 210,
-        marginTop: 20,
+    Imagee_left: {
+        height: screen_height/3,
+        width: screen_width/2,
+        marginTop: 5,
+        borderRadius: 8,
+    },
+    Imagee_right: {
+        marginLeft: 5,
+        height: screen_height/3,
+        width: screen_width/2,
+        marginTop: 5,
         borderRadius: 8,
     },
     divider: {

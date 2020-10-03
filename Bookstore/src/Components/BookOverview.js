@@ -2,8 +2,8 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-const HEIGHT = 300,
-  WIDTH = 200;
+
+const HEIGHT = 300, WIDTH = 200;
 const BookOverview = (props) => {
   const nav=useNavigation()
   return (

@@ -13,20 +13,19 @@ const profile = (props) => {
         }
         else {
             Linking.openURL("telprompt:01025478993")
-
         }
 
     }
     return (
         <View style={styles.root}>
             <LinearGradient
-                colors={['#FF8C00','#FF8C00']}
+                colors={['#FF8C00', '#FF8C00']}
                 style={{ height: "20%" }}
             >
-                 <View style={{ flexDirection: 'row', marginTop: 70, marginBottom: 20 }}>
+                <View style={{ flexDirection: 'row', marginTop: "10%" }}>
                     <View style={styles.divider} />
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 38, color: "#2D3436" }}> Personal <Text style={{ fontWeight: "300", color: "white" }}>Profile</Text></Text>
+                        <Text style={{ fontSize: 38, fontWeight: 'bold', color: "#2D3436" }}> Personal <Text style={{ fontWeight: "300", fontWeight: 'bold', color: "white" }}>Profile</Text></Text>
                     </View>
                     <View style={styles.divider} />
                 </View>
@@ -42,7 +41,7 @@ const profile = (props) => {
 
             <View style={{ alignItems: "center", marginTop: 55, margin: 15 }}>
                 <Title>Omar Ali</Title>
-                
+
             </View>
 
             <Card style={styles.mycard} onPress={() => { Linking.openURL("mailto:OmarAli@gmail.com") }}>
@@ -53,24 +52,24 @@ const profile = (props) => {
                 </View>
             </Card>
 
-        
+
             <Card style={styles.mycard} onPress={() => { OpenDial() }}>
                 <View style={styles.cardconent}>
                     <Entypo style={{ margin: 4 }} name="phone" size={32} color='#FF8C00' />
                     <Text style={{ marginTop: 12, fontSize: 15 }}>01025478993</Text>
                 </View>
             </Card>
-            
+
             <Card style={styles.mycard} >
                 <View style={styles.cardconent}>
-                <FontAwesome5  style={{ margin: 4 }} name="home" size={24} color='#FF8C00' />
+                    <FontAwesome5 style={{ margin: 4 }} name="home" size={24} color='#FF8C00' />
                     <Text style={{ marginTop: 12, fontSize: 15 }}> 129 El-Merghany Street,Heliopolis</Text>
                 </View>
             </Card>
-            
 
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 15 ,color:'#FF8C00' }}>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 15, color: '#FF8C00' }}>
                 <Button icon="account-edit" color="#FF8C00" mode="contained" >
                     Edit
              </Button>
@@ -84,11 +83,11 @@ const profile = (props) => {
 const styles = StyleSheet.create({
     root: {
         flex: 1,
-        backgroundColor:'white'
+        backgroundColor: 'white'
     },
     imagestyle: {
         alignItems: 'center',
-        marginTop:30
+        marginTop: 30
     },
     mycard: {
         margin: 3,
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
         padding: 5
     },
     divider: {
-        backgroundColor: "#2D3436",
+        backgroundColor: "#FF8C00",
         height: 1,
         flex: 1,
         alignSelf: 'center'

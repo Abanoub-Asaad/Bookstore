@@ -28,7 +28,7 @@ export default class ScreensStack extends React.Component {
     let iconcolor = "#FF8C00";
     return (
       <NavigationContainer>
-        
+
         <Tab.Navigator
           initialRouteName="Home"
           screenOptions={({ route }) => ({
@@ -37,32 +37,32 @@ export default class ScreensStack extends React.Component {
               route.name == "Home"
                 ? (iconame = "home")
                 : route.name == "Categories"
-                ? (iconame = "bars")
-                : route.name == "Search"
-                ? (iconame = "search1")
-                : route.name == "Bookmarks"
-                ? (iconame = "book")
-                : route.name == "Profile"
-                ? (iconame = "profile")
-                : null;
+                  ? (iconame = "bars")
+                  : route.name == "Search"
+                    ? (iconame = "search1")
+                    : route.name == "Bookmarks"
+                      ? (iconame = "book")
+                      : route.name == "Profile"
+                        ? (iconame = "profile")
+                        : null;
               return <AntDesign name={iconame} size={size} color={iconcolor} />;
             },
           })}
           tabBarOptions={{
-            showLabel:false,
+            showLabel: false,
             activeTintColor: iconcolor,
           }}
         >
-  
+
           <Tab.Screen name="Home" component={BookStack} />
           <Tab.Screen name="Categories" component={Categories} />
           <Tab.Screen name="Search" component={Search} />
           <Tab.Screen name="Bookmarks" component={Bookmarks} />
           <Tab.Screen name="Profile" component={profile} />
-  
+
         </Tab.Navigator>
-        
+
       </NavigationContainer>
-  );
+    );
   }
 }
