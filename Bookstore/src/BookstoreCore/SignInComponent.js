@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Dimensions, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'
@@ -57,12 +57,13 @@ export default class SignInComponent extends React.Component {
   }
 
   signInUser = () => {
+
     const { email, password } = this.state
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => this.props.navigation.navigate("HomeStackScreen") )
-      .catch(error => alert(error.toString()) )
+      .then(() => this.props.navigation.navigate("HomeStackScreen"))
+      .catch(error => alert(error.toString()))
   }
 
   render() {
@@ -148,12 +149,13 @@ export default class SignInComponent extends React.Component {
                 />
               }
             </TouchableOpacity>
-            
+
           </View>
 
           <View style={styles.button}>
             <TouchableOpacity style={styles.button_signIn}
               onPress={() => {
+                
                 this.checkPasswordValidation(this.state.password)
                 console.log(this.state.password)
 
@@ -168,7 +170,7 @@ export default class SignInComponent extends React.Component {
           </View>
 
           <View style={styles.lastViewInFooter}>
-            <Text style={{ color: '#A0A0A0' }}>Don't have an account?</Text>
+            <Text style={{ color: '#A0A0A0' }}>Don't have an account? </Text>
             <Text style={styles.textSignUp}
               onPress={() => this.props.navigation.navigate("SignUpScreen")}>
               Sign up

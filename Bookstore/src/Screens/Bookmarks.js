@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ActivityIndicator } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 
 const Bookmark = () => {
@@ -8,6 +8,8 @@ const Bookmark = () => {
       colors={['#FF8C00', '#FF8C00']}
       style={{ height: "20%" }}
     >
+      
+
       <View style={{ flexDirection: 'row', marginTop: 70, marginBottom: 20 }}>
         <View style={styles.divider} />
         <View style={styles.title}>

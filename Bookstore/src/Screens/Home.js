@@ -10,15 +10,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const path = "../../assets/";
 const BookCovers = {
-  firstBook: { path: require(`${path}above-all-else-cover-hires.jpg`), title: "above all else" },
-  secondBook: { path: require(`${path}alice-greta-reissue-hires.jpg`), title: "alice greta reissue" },
-  thirdBook: { path: require(`${path}mocktails-hires.jpg`), title: "mocktails" },
-  fourthBook: { path: require(`${path}mothers-journey-hires.jpg`), title: "mothers journey" }
+  firstBook: { path: require(`${path}above-all-else-cover-hires.jpg`), title: "Above all else" },
+  secondBook: { path: require(`${path}alice-greta-reissue-hires.jpg`), title: "Alice greta reissue" },
+  thirdBook: { path: require(`${path}mocktails-hires.jpg`), title: "Mocktails" },
+  fourthBook: { path: require(`${path}mothers-journey-hires.jpg`), title: "Mothers journey" }
 };
 
 const Home = () => {
   return (
     <View style={styles.mainview}>
+
+      <ScrollView style={styles.container}>
 
       <View style={styles.sliderContainer}>
         <Swiper
@@ -101,8 +103,6 @@ const Home = () => {
         </Swiper>
       </View>
 
-      <ScrollView style={styles.container}>
-
         <View style={styles.categoryContainer}>
 
           <TouchableOpacity style={styles.categoryBtn}>
@@ -128,7 +128,7 @@ const Home = () => {
 
         </View>
 
-        <Text style={{ fontSize: 30, marginLeft: 95, fontWeight: 'bold', marginBottom: 20, color: '#FF8C00', marginTop: 10 }}>Recently Viewed</Text>
+        <Text style={{ fontSize: 30, alignSelf: 'center', fontWeight: 'bold', marginBottom: 20, color: '#000', marginTop: 10 }}>Recently Viewed</Text>
 
         <View style={styles.shelf}>
           <BookOverview imgsrc={BookCovers.firstBook.path} title={BookCovers.firstBook.title} />
@@ -187,15 +187,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: 70,
     height: 70,
-
     borderRadius: 50,
-    marginRight: 70
+    marginRight: 30
   },
   categoryBtnTxt: {
     alignSelf: 'center',
     marginTop: 5,
     color: '#FF8C00',
-    marginRight: 65
+    marginRight: 25
   }
 });
 export default Home;
