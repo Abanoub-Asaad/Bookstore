@@ -25,7 +25,7 @@ const profile = (props) => {
                 <View style={{ flexDirection: 'row', marginTop: "10%" }}>
                     <View style={styles.divider} />
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 38, fontWeight: 'bold', color: "#2D3436" }}> Personal <Text style={{ fontWeight: "300", fontWeight: 'bold', color: "white" }}>Profile</Text></Text>
+                        <Text style={{ fontSize: 38, color: "#2D3436" }}> Personal <Text style={{ fontWeight: "300", color: "white" }}>Profile</Text></Text>
                     </View>
                     <View style={styles.divider} />
                 </View>

@@ -40,7 +40,7 @@ export default class ScreensStack extends React.Component {
                   ? (iconame = "bars")
                   : route.name == "Search"
                     ? (iconame = "search1")
-                    : route.name == "Bookmarks"
+                    : route.name == "Quotes"
                       ? (iconame = "book")
                       : route.name == "Profile"
                         ? (iconame = "profile")
@@ -57,7 +57,7 @@ export default class ScreensStack extends React.Component {
           <Tab.Screen name="Home" component={BookStack} />
           <Tab.Screen name="Categories" component={Categories} />
           <Tab.Screen name="Search" component={Search} />
-          <Tab.Screen name="Bookmarks" component={Bookmarks} />
+          <Tab.Screen name="Quotes" component={Bookmarks} />
           <Tab.Screen name="Profile" component={profile} />
 
         </Tab.Navigator>

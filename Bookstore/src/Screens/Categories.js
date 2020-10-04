@@ -11,7 +11,7 @@ const Categories = (props) => {
         colors={['#FF8C00', '#FF8C00']}
         style={{ height: "20%" }}
       >
-        <View style={{ flexDirection: 'row', marginTop: 70, marginBottom: 20 }}>
+        <View style={{ flexDirection: 'row', marginTop: '13%', marginBottom: 20 }}>
           <View style={styles.divider} />
           <View style={styles.title}>
             <Text style={{ fontSize: 38, color: "#2D3436" }}> Book <Text style={{ fontWeight: "300", color: "white" }}>Categories</Text></Text>
