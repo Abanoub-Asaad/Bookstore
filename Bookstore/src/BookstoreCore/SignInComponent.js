@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Dimensions, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'

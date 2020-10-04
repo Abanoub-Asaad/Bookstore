@@ -136,9 +136,7 @@ const Home = () => {
 
         </View>
         
-        <View style={styles.divider} />
-        <Text style={{ fontSize: 30, alignSelf: 'center', fontWeight: 'bold', color: '#000', marginTop: 10 }}>Recently Viewed</Text>
-        <View style={[styles.divider, {marginBottom: 20} ]} />
+        <Text style={{ fontSize: 30, alignSelf: 'center', fontWeight: 'bold', marginBottom: 20, color: '#000', marginTop: 10 }}>Recently Viewed</Text>
 
         <View style={styles.shelf}>
           <BookOverview imgsrc={BookCovers.firstBook.path} title={BookCovers.firstBook.title} />

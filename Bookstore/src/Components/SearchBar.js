@@ -8,7 +8,7 @@ const SearchBar = () => {
       <AntDesign name="search1" style={styles.Icon} />
       <TextInput
         style={styles.input}
-        placeholder="Please enter the name of the book you want"
+        placeholder="Search Books..."
       />
     </View>
   );
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   background: {
     width: "95%",
     alignSelf: "center",
-    height: 40,
+    height: 60,
     flexDirection: "row",
     borderRadius: 10,
     borderColor: "black",
