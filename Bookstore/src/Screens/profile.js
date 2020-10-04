@@ -40,14 +40,14 @@ const profile = (props) => {
             </View>
 
             <View style={{ alignItems: "center", marginTop: 55, margin: 15 }}>
-                <Title>Omar Ali</Title>
+                <Title>Abanoub</Title>
 
             </View>
 
             <Card style={styles.mycard} onPress={() => { Linking.openURL("mailto:OmarAli@gmail.com") }}>
                 <View style={styles.cardconent}>
                     <MaterialIcons style={{ margin: 4 }} name="email" size={32} color='#FF8C00' />
-                    <Text style={{ marginTop: 12, fontSize: 15 }}>OmarAli12@gmail.com</Text>
+                    <Text style={{ marginTop: 12, fontSize: 15 }}>abanob18170001@cis.asu.edu.eg</Text>
 
                 </View>
             </Card>
@@ -56,7 +56,7 @@ const profile = (props) => {
             <Card style={styles.mycard} onPress={() => { OpenDial() }}>
                 <View style={styles.cardconent}>
                     <Entypo style={{ margin: 4 }} name="phone" size={32} color='#FF8C00' />
-                    <Text style={{ marginTop: 12, fontSize: 15 }}>01025478993</Text>
+                    <Text style={{ marginTop: 12, fontSize: 15 }}>01212836883</Text>
                 </View>
             </Card>
 
