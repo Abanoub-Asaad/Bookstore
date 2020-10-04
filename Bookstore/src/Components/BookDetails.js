@@ -1,9 +1,13 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Dimensions } from "react-native";
 import Home from '../Screens/Home'
 import BookCovers from '../Screens/Home'
 import LikeButton from '../Components/LikeButton';
+
 const HEIGHT = 250, WIDTH = 150;
+const screen_width = Dimensions.get('window').width;
+const screen_height = Dimensions.get('window').height;
+
 const BookDetails = ({ route, navigation }) => {
     const imgsrc = route.params.imgsrc
     const title = route.params.title
@@ -75,9 +79,8 @@ const styles = StyleSheet.create({
     },
     btn: {
         position: 'absolute',
-        marginTop: 324,
-        marginLeft: 320,
-
+        marginTop: screen_height*40/100 - 40,
+        marginLeft: screen_width-80,
     }
 });
 export default BookDetails;

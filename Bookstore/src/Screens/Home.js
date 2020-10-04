@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 0,
     alignSelf: 'center',
-    marginLeft: 7
+    marginLeft: 15
   },
   categoryIcon: {
     borderWidth: 0,

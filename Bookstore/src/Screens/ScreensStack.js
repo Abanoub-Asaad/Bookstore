@@ -49,7 +49,7 @@ export default class ScreensStack extends React.Component {
             },
           })}
           tabBarOptions={{
-            showLabel: false,
+            showLabel: true,
             activeTintColor: iconcolor,
           }}
         >
