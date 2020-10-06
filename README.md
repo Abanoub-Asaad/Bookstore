@@ -1,30 +1,14 @@
-#                                                                Bookstore app
-##                                                    A cross-platform mobile app with React Native
-
-## [Bookstore Demo on Youtube](https://www.youtube.com/watch?v=BA9ea7dTD2E&t=2s&ab_channel=AbanoubAsaad)
-
-| You should import these libraries |
-| ------------------------------------------------------------ |
-|npm install @react-navigation/native|
-|expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view|
-|npm install @react-navigation/stack|
-|npm install @react-navigation/bottom-tabs|
-|npm install --save react-navigation|
-|npm install react-native-animatable --save|
-|npm install --save react-native-vector-icons|
-|npm i expo-linear-gradient|
-|npm i react-native-paper|
-|npm install --save react-navigation-stack|
-|npm install --save react-native-animatable|
-|npm install -g firebase-tools	|
-|npm install --save firebase|
-|npm i react-native-swiper|
-
-| Amazing React Native Resources|
-| ------------------------------------------------------------ |
-|[React Native Animation](https://github.com/oblador/react-native-animatable)|
-|[React Native Icons](https://oblador.github.io/react-native-vector-icons/)|
-
+<div align="center">
+  <a href="https://github.com/Abanoub-Asaad/Bookstore">
+    <h1>Bookstore</h1>
+  </a>
+  A cross-platform mobile app with React Native.
+  <br />
+  <br />
+  <a href="https://youtu.be/BA9ea7dTD2E">
+    <img src="https://github.com/Abanoub-Asaad/Bookstore/blob/master/Bookstore/src/Screens/Images/BookstoreVideo.gif" alt="demo" />
+  </a>
+ </div>
 
 ## Team
 
